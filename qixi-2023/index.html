@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="七夕礼物">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>七夕礼物</title>
+    <link rel="shortcut icon" href="gugua.ico" type="image/x-icon">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        background:
+            linear-gradient(to left top,
+                rgb(17, 110, 231),
+                rgb(56, 69, 255),
+                rgb(126, 129, 225) 25%,
+                rgb(146, 79, 253) 50%,
+                rgb(214, 132, 252),
+                rgb(211, 241, 119),
+                rgb(243, 246, 33)) 95%;
+    }
+
+    .music {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 30px;
+        animation: rotate 3s infinite linear forwards;
+    }
+
+    /* 音乐旋转动画 */
+    @keyframes rotate {
+        0% {
+            transform: rotate(0);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .letter {
+        position: relative;
+    }
+
+
+    .top {
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(234, 184, 18);
+        overflow: hidden;
+    }
+
+    .top_tip {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 2;
+        border-radius: 50%;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .top::after,
+    .top::before {
+        content: '';
+        position: absolute;
+        border-top: 1px solid;
+    }
+
+    .content>img {
+        position: absolute;
+        top: 5px;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 95%;
+        padding: 20px;
+        text-align: justify;
+        overflow: scroll;
+        overflow-x: hidden;
+        /* background-color: #fff; */
+        transition: all 3s;
+        animation: gugua 3s ease-in-out infinite forwards;
+        animation-play-state: paused;
+    }
+
+    /* 隐藏拖动条 */
+    /* .content>p::-webkit-scrollbar {
+    display: none;
+} */
+
+    @keyframes gugua {
+        0% {
+            transform: scale(1);
+        }
+
+        100% {
+            transform: scale(3);
+        }
+    }
+
+    .title_tip {
+        position: absolute;
+        top: -50px;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* 电脑*/
+    @media screen and (min-width: 1200px) {
+
+        .letter {
+            width: 1000px;
+            height: 400px;
+        }
+
+        .top::after,
+        .top::before {
+            top: 203px;
+            width: 110%;
+        }
+
+        .top::before {
+            transform: rotateZ(22deg);
+            left: -41px;
+        }
+
+        .top::after {
+            transform: rotateZ(-22deg);
+            right: -41px;
+        }
+
+        .top_tip {
+            font-size: 40px;
+            margin: -30px;
+            width: 60px;
+            height: 60px;
+        }
+    }
+
+    /* 平板 */
+    @media screen and (max-width: 1200px) {
+
+        .letter {
+            width: 350px;
+            height: 200px;
+        }
+
+        .top::after,
+        .top::before {
+            top: 100px;
+            width: 120%;
+        }
+
+        .top::before {
+            transform: rotateZ(30deg);
+            left: -34px;
+        }
+
+        .top::after {
+            transform: rotateZ(-30deg);
+            right: -35px;
+        }
+
+        .top_tip {
+            font-size: 30px;
+            margin: -20px;
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    /* 手机 */
+    @media screen and (max-width: 600px) {
+
+        .letter {
+            width: 140px;
+            height: 100px;
+        }
+
+        .top::after,
+        .top::before {
+            top: 51px;
+            width: 125%;
+        }
+
+        .top::before {
+            transform: rotateZ(36deg);
+            left: -16px;
+        }
+
+        .top::after {
+            transform: rotateZ(-35deg);
+            right: -16px;
+        }
+
+        .top_tip {
+            font-size: 20px;
+            margin: -15px;
+            width: 30px;
+            height: 30px;
+        }
+    }
+</style>
+
+<body>
+    <!-- 信封 -->
+    <div class="letter">
+        <div class="bottom"></div>
+        <div class="content">
+            <img src="image/guguahanbs.png" alt="">
+            <!-- <p>七夕又是一个人过呢？</p> -->
+            <!-- <p>1.没经过你的同意，就把你放在心上，是我不好。可你没有我的允许，便走进了我的心里，就是你的不对了!
+                4.神明把光风交给霁月，把樱花交给春天，把黑夜交给星光，把心跳交给脸红，把你交给我。
+                5.你大概不知道，我望着你的时候，眼睛里的光，亮的我自己都害怕。
+                6.我希望自己可以温柔点，再温柔点，不要皱眉，也不要满身戾气，把一生的温柔都给你。
+                7.我将永远忠于自己，披星戴月奔向理想和你。
+                8.想成为你的黑色，闭眼就是我.
+                9.在这路遥马急的人间，我希望一直是你，陪你走过四季，交换日复一日。
+                10.晚霞与玫瑰共绘浪漫，你是我藏在心底的爱意泛滥。
+                11.从我拿起笔，准备叙述你的细节开始，总是忍不住走神，真抱歉，情话没写出来，可我实实在在地想了你一个小时。
+                12.真的好喜欢你啊，像从有风的晚上走到暖烘烘的房间里那么喜欢你，你是软绵绵又大大的被窝，你是安静的夜晚和不打烊的便利店，希望你可以陪我久一点啊。
+                13.你若敢陪我从校服到婚纱，我便敢与你从初恋到白发。
+                14.吾求之芳心兮，念汝归汝安得良人兮，盼吾回。
+                15.你是我平淡余生的不将就，也是我藏至心底的不可说。
+                16.有两个心愿你在身边，在你身边。
+                17.你的日常生活里加上我，你会不会觉得挤。
+                18.要把生命浪费在美好的事物上，比如你。
+                19.“七”待是你“夕”望是你 欢喜是你 喜欢是你 我想见你 不远万里 往后余生万般皆是你
+                20.我的每一支笔都知道你的名字
+                21.我的眼中没有星辰大海，没有纸醉金迷，没有灯红酒绿，只有你。
+                22.你是世间最可爱的小星星，我爱了整个宇宙只为和你碰头。
+                23.在所有物是人非的景色里，我只喜欢你。
+                24.遇见你的时候，感觉自己变成了一瓶雪碧，一下被拧开，滋啦一声全身都冒着幸福的亮晶晶的小泡泡。
+                25.钟于忠于衷于终于。
+                26.来日方长，你要的爱和感动都会慢慢给你。
+                27.你的过去我来不及参与
+                你的未来我奉陪到底
+                28.以后想吸烟了告诉我，我吻你。
+                29.我想你应该很忙吧，那你只看到前三个字就好了。
+                30.春风酿成蜜桃酒万杯不及你温柔.
+                31.我几乎不吃糖的，但在你这里尝了各种甜。
+                32.小手一牵，陪你今年、明年、后年、每年、今天、明天、后天、天天。
+                33.我用了7%遇见你剩下的93%用来爱你。
+                34.晚霞与玫瑰共绘浪漫，你是我藏在心底的爱意泛滥。
+                35.梦想不多兜里有烟，肚里有墨，手里有活，卡里有钱，心里有你。
+                36.世间五味俱全，谢谢你给我甜。
+                37.那就在一起晨昏和四季。
+                38.今天听到一首情歌，我不知道歌里写的是谁，但我听到的全部都是你。
+                39.我超喜欢你们家楼下那个咖啡店里每次买咖啡都会送的那个小甜饼干，包装袋上面画的那个小狐狸，怎么那么可爱！可是我拐了这么多弯，想表达的就前五个字啊。
+                40.“我作了一首超厉害的诗，不仅藏头藏尾还藏中间！”“什么啊？”“我我我喜喜喜欢欢欢你你你”
+                1.何止七夕，想和你朝夕都在一起。（I want to be with you all the time）
+                2.没别的意思
+                就是借着特殊日子说声喜欢你。
+                3.山野万里，你是我藏在微风里的欢喜。
+                4.我爱漫山遍野的林树，爱朝暮的云蒸霞蔚，爱一望无际的海天一色，但我更爱孤绝的飞鸟，更爱你望向我时，眸底摇曳的碎光。
+                5.你不是我权衡利弊之后的选择，你是我怦然心动后，明知不可为而为之的坚定，这是我对你和我们之间感情的诚意。
+                6.愿有生之年，只诉温暖。
+                7.所有的温柔眷恋都是对你灿若星辰的喜欢。
+                8.我攒了好多年的温柔和浪漫想要快点都给你。
+                9.在所有物是人非里，一而再再而三的喜欢你。
+                10.世间五味俱全，谢谢你给我甜；
+                11.在所有物是人非的景色里，我依旧喜欢你；
+                12.世界的温柔，是及时的善意和干净的你。
+                13.想陪你烹雪煮茶白首天涯，万家灯火，月落归家；
+                14.人间本不该令我这么欣喜的，但是你来了。
+                15.我这个人不算太好，不算太坏，你姑且试试。
+                16.世间万般苦，你是一点甜。
+                17.这个世界乱糟糟的，而你干干净净，可以悬在我的心上，作太阳和月亮。
+                18.我喜欢你，岂止是狼子野心，是贼心不改。
+                19.深巷里有人讲故事，故事里的我和你很幸福；
+                20.星河滚烫，你是人间理想；
+                21.保持公开，低调恋爱
+                22.今天没有文案只有你
+                23.好好生活，一直爱你
+                24.扑通扑通扑通扑通…… 糟糕 违反天规了
+                25.分享我的心动男孩
+                26.我的三观不正 很歪 全都偏向你
+                27.酸甜苦辣，与你分享，三餐四季，与你共渡
+                28.我也可以拧不开瓶盖啦
+            </p> -->
+        </div>
+        <div class="top">
+            <div class="top_tip">💕</div>
+        </div>
+        <div class="title_tip">右上角点击播放音乐<br>点击爱心拆开信封</div>
+    </div>
+    <!-- 背景音乐播放 -->
+    <img src="image/musicpause.png" alt="点我控制音乐播放" class="music">
+</body>
+<script>
+    let doms = {
+        letter: document.querySelector('.letter'),
+        pause: document.querySelector('.music'),
+        top: document.querySelector('.top'),
+        top_tip: document.querySelector('.top_tip'),
+        title_tip: document.querySelector('.title_tip'),
+        content: document.querySelector('.content img'),
+    }
+
+    // 音乐播放
+    let musicSrc = "https://music.163.com/song/media/outer/url?id=1791431";
+    let music = new Audio(musicSrc);
+    let flog = false;
+
+    window.addEventListener('DOMContentLoaded', function () {
+        doms.pause.style.animationPlayState = 'paused';
+    })
+    doms.pause.addEventListener('click', function () {
+        if (flog) {
+            music.pause();
+            this.style.animationPlayState = 'paused';
+            this.src = 'image/musicpause.png';
+            flog = false;
+        } else {
+            this.style.animationPlayState = '';
+            this.src = 'image/musicrunning.png';
+            music.play();
+            flog = true;
+        }
+    })
+    // 拆开信封
+    doms.top_tip.addEventListener('click', function () {
+        this.style.display = 'none';
+        doms.top.style.display = 'none';
+        doms.title_tip.style.display = 'none';
+        let musicGuguaSrc = 'mp3/gugua.mp3';
+        let musicGugua = new Audio(musicGuguaSrc);
+        musicGugua.loop = 'loop';
+        // 播放content动画
+        doms.content.style.animationPlayState = 'running';
+        // 播放音频
+        doms.pause.style.animationPlayState = 'paused';
+        doms.pause.src = 'image/musicpause.png';
+        music.pause();
+        musicGugua.play();
+    })
+</script>
+
+</html>
