@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.bg {
+    width: 100vw;
+    height: 100vh;
+    background-color: #0a0148;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.star {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 3px #7e7e7e;
+}
+
+.moon {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: antiquewhite;
+    box-shadow: 0 0 100px rgb(174, 174, 174);
+}
+
+.moon div {
+    float: left;
+    margin-top: 20px;
+    margin-left: 50px;
+    height: 170px;
+    writing-mode: vertical-lr;
+}
+
+.moon img {
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
+    width: 50px;
+}
+
+.woter {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 35%;
+    border-top: 5px solid #fff;
+    filter: blur(10px);
+}
+
+.woter .moon {
+    margin: 0 auto;
+    margin-top: 20px;
+    z-index: -1;
+    transform: rotateX(180deg);
+}
